@@ -34,7 +34,7 @@ export function MainForm() {
       startDate: Date.now(),
       completeDate: null,
       interruptDate: null,
-      duration: 1,
+      duration: state.config[nextCycleType], // Usa o tempo do ciclo atual
       type: nextCycleType,
     };
 
@@ -68,7 +68,7 @@ export function MainForm() {
       </div>
 
       <div className='formRow'>
-        <p>Próximo intervalo é de {nextCycleType}</p>
+        <p>Próximo intervalo é de </p>
       </div>
 
       <div className='formRow'>
