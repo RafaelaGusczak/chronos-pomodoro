@@ -14,8 +14,6 @@ export function Cycles() {
     longBreakTime: 'descanso longo',
   };
 
-  console.log(cycleStep);
-
   // Renderiza os ciclos
   return (
     <div className={styles.cycles}>
