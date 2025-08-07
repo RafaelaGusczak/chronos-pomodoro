@@ -46,12 +46,12 @@ export function MainForm() {
         ...prevState,
         config: {
           ...prevState.config,
-        }, 
-        activeTask: newTask, 
-        currentCycle: nextCycle, 
-        secondsRemaining, 
-        formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining), 
-        tasks: [...prevState.tasks, newTask], 
+        },
+        activeTask: newTask,
+        currentCycle: nextCycle,
+        secondsRemaining,
+        formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
+        tasks: [...prevState.tasks, newTask],
       }; // Atualiza o estado com a nova tarefa e o tempo restante
     });
   }
@@ -72,9 +72,11 @@ export function MainForm() {
         <p>Próximo intervalo é de </p>
       </div>
 
-      <div className='formRow'>
-        <Cycles />
-      </div>
+      {state.currentCycle > 0 && (
+        <div className='formRow'>
+          <Cycles />
+        </div>
+      )}
 
       <div className='formRow'>
         <DefaultButton icon={<PlayCircleIcon />} color='green' />
