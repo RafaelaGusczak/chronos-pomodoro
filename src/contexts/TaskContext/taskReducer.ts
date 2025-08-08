@@ -17,6 +17,7 @@ export function taskReducer(
         ...state,
         activeTask: newTask,
         currentCycle: nextCycle,
+        secondsRemaining,
         formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
         tasks: [...state.tasks, newTask],
       };
@@ -25,7 +26,7 @@ export function taskReducer(
       return {
         ...state,
         activeTask: null,
-        currentCycle: 0,
+        secondsRemaining: 0,
         formattedSecondsRemaining: '00:00',
         tasks: state.tasks.map(task => {
           if (state.activeTask && state.activeTask.id === task.id) {

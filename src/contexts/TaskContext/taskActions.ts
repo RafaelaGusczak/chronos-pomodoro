@@ -19,4 +19,6 @@ export type TaskActionWithoutPayload =
       type: TaskActionTypes.INTERRUPT_TASK;
     };
 
-export type TaskActionModel = TaskActionWithPayload | TaskActionWithoutPayload;
+export type TaskActionModel = 
+| TaskActionWithPayload 
+| TaskActionWithoutPayload;

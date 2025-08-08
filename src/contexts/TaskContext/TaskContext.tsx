@@ -10,7 +10,7 @@ type TaskContextProps = {
 
 const initialContextValue = {
   state: initialTaskState,
-  setState: () => {},
+  dispatch: () => {},
 };
 
 export const TaskContext = createContext<TaskContextProps>(initialContextValue);
