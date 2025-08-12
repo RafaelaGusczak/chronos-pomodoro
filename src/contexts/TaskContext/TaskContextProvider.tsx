@@ -41,6 +41,8 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
       worker.terminate();
     }
 
+    document.title = `${state.formattedSecondsRemaining} - Chronos Pomodoro`;
+
     worker.postMessage(state);
   }, [worker, state]);
 
@@ -48,7 +50,7 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
     if (state.activeTask && playBeepRef.current === null) {
       playBeepRef.current = loadBeep();
     } else {
-      playBeepRef.current = null
+      playBeepRef.current = null;
     }
   }, [state.activeTask]);
 
