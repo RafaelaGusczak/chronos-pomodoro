@@ -7,9 +7,10 @@ import { MainTemplate } from '../../layout/MainLayouts';
 import { useRef } from 'react';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 import { showMessage } from '../../adapters/showMessage';
+import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
 
 export function Settings() {
-  const { state } = useTaskContext();
+  const { state, dispatch } = useTaskContext();
   const workTimeInput = useRef<HTMLInputElement>(null);
   const shortBreakTimeInput = useRef<HTMLInputElement>(null);
   const longBreakTimeInput = useRef<HTMLInputElement>(null);
@@ -27,17 +28,21 @@ export function Settings() {
     if (isNaN(workTime) || isNaN(shortBreakTime) || isNaN(longBreakTime)) {
       formErrors.push('Digite apenas números para TODOS os campos.');
     }
-    
+
     if (workTime < 1 || workTime > 99) {
       formErrors.push('Digite valores entre 1 e 99 para o tempo de foco.');
     }
-    
+
     if (shortBreakTime < 1 || shortBreakTime > 30) {
-      formErrors.push('Digite valores entre 1 e 30 para o tempo de descanso curto.');
+      formErrors.push(
+        'Digite valores entre 1 e 30 para o tempo de descanso curto.',
+      );
     }
 
     if (workTime < 1 || workTime > 60) {
-      formErrors.push('Digite valores entre 1 e 60 para o tempo de descanso longo.');
+      formErrors.push(
+        'Digite valores entre 1 e 60 para o tempo de descanso longo.',
+      );
     }
 
     if (formErrors.length > 0) {
@@ -47,7 +52,15 @@ export function Settings() {
       return;
     }
 
-    console.log('Salvar');
+    dispatch({
+      type: TaskActionTypes.CHANGE_SETTINGS,
+      payload: {
+        workTime,
+        shortBreakTime,
+        longBreakTime,
+      },
+    });
+    showMessage.success('Configurações salvas com sucesso!');
   }
 
   return (
