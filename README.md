@@ -1,15 +1,15 @@
-# Curso React 19 e Next.js 15 (2025)
+# Projeto prático com React 19
 
 Repositório com estudos do curso **React JS 19 e Next.js 15 (atualizado para 2025)**, ministrado por **Luiz Otávio Miranda**.
 
 ## Tecnologias abordadas
 
-- React 19 e Next.js 15 com App Router
-- Server Actions
-- Server Components
-- Tailwind CSS
+- React 19 
+- Vite
 - TypeScript
-- Rest API com NestJS
+- React Router
+- Hooks
+- Web Worker
 
 ## Objetivo
 
