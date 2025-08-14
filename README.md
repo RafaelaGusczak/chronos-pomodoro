@@ -15,4 +15,4 @@ Repositório com estudos do curso **React JS 19 e Next.js 15 (atualizado para 20
 
 Estudos e prática pessoal com as tecnologias mais atuais do ecossistema React/Next.js.
 
-> Curso em andamento — uso exclusivo para aprendizado.
+> Projeto finalizado — uso exclusivo para aprendizado.
