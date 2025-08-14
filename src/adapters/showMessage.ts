@@ -8,9 +8,9 @@ export const showMessage = {
   warning: (msg: string) => toast.warning(msg),
   info: (msg: string) => toast.info(msg),
   dismiss: () => toast.dismiss(),
-  confirm: (onClosing: (confirmation: boolean) => void) =>
+  confirm: (msg: string, onClosing: (confirmation: boolean) => void) =>
     toast(Dialog, {
-      data: 'Tem certeza que deseja apagar o histórico?',
+      data: msg,
       onClose: confirmation => {
         if (confirmation) return onClosing(true);
         return onClosing(false);
